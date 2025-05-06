@@ -1,0 +1,43 @@
+/*
+  =============================================================================
+  Este archivo utiliza directivas de TailwindCSS (@tailwind) y PostCSS para importar
+  estilos de FullCalendar. VSCode puede marcar "unknown at rule @tailwind" como advertencia,
+  pero estos bloques serán procesados correctamente por tu pipeline de PostCSS/Tailwind.
+
+  Opciones para eliminar estas advertencias en el editor:
+    1. Instala la extensión "Tailwind CSS IntelliSense".
+    2. Deshabilita la validación de CSS en VSCode agregando en .vscode/settings.json:
+       {
+         "css.validate": false,
+         "scss.validate": false,
+         "less.validate": false
+       }
+  =============================================================================
+*/
+/* stylelint-disable at-rule-no-unknown */
+@import "@fullcalendar/common/main.css";
+@import "@fullcalendar/daygrid/main.css";
+@import "@fullcalendar/timegrid/main.css";
+@import "@fullcalendar/interaction/main.css";
+
+@import "tailwindcss/preflight";
+
+@import "tailwindcss/utilities";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
